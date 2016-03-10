@@ -11,5 +11,15 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
             url: '/main',
             templateUrl: 'partials/main.html',
             controller: 'mainCtrl'
+        }).
+        state('course', {
+            url: '/course',
+            templateUrl: 'partials/course.html',
+            controller: 'mainCtrl'
+        }).
+        state('workshop', {
+            url: '/worshop',
+            templateUrl: 'partials/workshop.html',
+            controller: 'mainCtrl'
         });
 }]);
