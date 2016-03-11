@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
-body{font-family: 'Open Sans Hebrew', sans-serif;}
+body{font-family: 'Open Sans Hebrew', sans-serif, Arial;}
 .wrap{max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 20px; box-sizing: border-box}
 .full-width{width: 100%; margin: 0 auto; padding: 0px; box-sizing: border-box}
 .fl{  float: left;}
@@ -7,9 +7,13 @@ body{font-family: 'Open Sans Hebrew', sans-serif;}
 .clearfix{clear: both}
 .pattern_down{  background: url(../images/pattern_down.png) repeat-x top #000;  height: 50px;  width: 100%;  }
 .pattern_up{  background: url(../images/pattern_up.png) repeat-x bottom #000;  height: 50px;  width: 100%;  }
+.spacer{
+  height: 25px;
+  background: #000;
+  width: 100%;
+}
 header{
   background-size: cover;
-  background: url(../images/header.jpg) no-repeat center 64px #000;
   min-height: 446px;
   .preHead{
     background: #000;
@@ -34,13 +38,28 @@ header{
     position: relative;
     p{
       color: #fff;
-      font-size: 40px;
+      font-size: 34px;
       right: 10%;
-      bottom: 135px;
       font-weight: bold;
       direction: rtl;
-      position: absolute;
+      padding-top: 210px;
+      width: 500px;
+      padding-right: 250px;
+      float: right;
     }
+    .sub{
+    padding-top: 10px;
+    }
+  }
+}
+.course{
+  header{
+    background: url(../images/course/header.jpg) no-repeat center 64px #000;
+  }
+}
+.workshop{
+  header{
+    background: url(../images/workshop/header.png) no-repeat center 64px #000;
   }
 }
 main{
@@ -54,7 +73,7 @@ main{
       font-size: 22px;
     }
   }
-  .aboutSadna{
+  .aboutCourse{
     background: #000;  text-align: center;
     article{
       color:#fff;
@@ -66,7 +85,7 @@ main{
     }
     img{  width: 100%;  }
   }
-  .sadnaPrograms{
+  .courseExpect{
     padding-top: 40px;
     h3{  font-weight: 600;  text-align: center;  font-size: 25px;  }
     ul li{
@@ -85,15 +104,109 @@ main{
       &:after{  content: "";  display: block;  clear: both;  }
     }
   }
+  .courseProgram{
+    padding: 40px;
+    background: #fffbe6;
+    h3{
+      font-size: 34px;
+      text-align: center;
+      font-weight: 600;
+      direction: rtl;
+    }
+    .programList{
+      margin: 20px auto;
+      .pieCirc{
+        text-align: center;
+        width: 31%;
+        margin: 0 1%;
+        display: inline-block;
+        padding: 25px 0;
+        vertical-align: top;
+        img{
+          max-width: 100%;
+        }
+        h4{
+          font-weight: 600;
+          font-size: 26px;
+          padding: 15px 0 15px;
+          direction: rtl;
+        }
+        ul{
+          li{
+            line-height: 130%;
+            font-size: 18px;
+            direction: rtl;
+          }
+        }
+      }
+      .pie{
+        text-align: center;
+        width: 29%;
+        margin: 1% 1%;
+        display: inline-block;
+        padding: .7% 0.7%;
+        vertical-align: top;
+        border-radius: 2px;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+        background: rgba(255,255,255,0.5);
+        min-height: 540px;
+        img{
+          max-width: 100%;
+        }
+        h4{
+          font-weight: 600;
+          font-size: 26px;
+          padding: 15px 0 15px;
+          direction: rtl;
+        }
+        ul{
+          li{
+            line-height: 130%;
+            font-size: 18px;
+            direction: rtl;
+            &:before{
+              content: '-';
+            }
+          }
+        }
+        &:nth-child(10), &:nth-child(11){
+          margin: 0 9%;
+        }
+      }
+    }
+  .programSmallList{
+    padding: 30px;
+    ul{
+      li{
+        display: inline-block;
+        width: 23%;
+        margin: 0 1%;
+        text-align: center;
+        direction: rtl;
+        img{
+          max-width: 100%;
+        }
+        h4{
+          font-size: 24px;
+          font-weight: 600;
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+  }
+
   .spacerPhoto{
     text-align: center;
-    margin: 50px 0;
+    margin: 0;
     background: url(../images/pattern_up.png) repeat-x bottom;
     img{  width: 100%; position: relative; z-index: -1; bottom: -2px;}
   }
   .detailsList{
+    margin: 0 auto;
+    padding: 30px 0;
     direction: rtl;
-    li{display: inline-block; width: 33%; vertical-align: top; text-align: center; padding: 25px 0}
+    li{display: inline-block; width: 29%; margin: 0 2%; vertical-align: top; text-align: center; padding: 25px 0}
     h4{font-weight: 600; font-size: 30px;padding: 20px 0px;}
     p{font-size: 18px;line-height: 130%;
       strong{  font-weight: 600;  }

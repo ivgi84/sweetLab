@@ -18,7 +18,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
             controller: 'mainCtrl'
         }).
         state('workshop', {
-            url: '/worshop',
+            url: '/workshop',
             templateUrl: 'partials/workshop.html',
             controller: 'mainCtrl'
         });

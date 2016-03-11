@@ -1,11 +1,13 @@
 var templateCtrls = angular.module('app.Ctrls', []);
 
-templateCtrls.controller('mainCtrl', ['$scope','app.factories.data', function ($scope, data) {
+templateCtrls.controller('mainCtrl', ['$scope','$state','app.factories.data', function ($scope, $state ,data) {
     $scope.isLoading = true;
 
+    console.log();
+
     var page = {
-        page:'course',
-        lang:'he'
+        page:$state.current.name,
+        lang:'ru'
     }
 
     data.getContent(page).then(function(data){

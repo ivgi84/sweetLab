@@ -1,4 +1,4 @@
-<div class="full-width">
+<div class="full-width course">
     <header>
         <div class="preHead">
             <div class="fl">
@@ -26,22 +26,48 @@
                 {{::content.aboutNina}}
             </article>
         </div>
-        <div class="aboutSadna">
+        <div class="aboutCourse">
             <article class="wrap">
-                {{::content.aboutSadna}}
+                {{::content.aboutCourse}}
             </article>
-            <img src="images/Collage.png" alt="">
+            <img src="images/course/Collage.png" alt="">
         </div>
 
-        <div class="sadnaPrograms wrap">
-            <h3>{{::content.program.title}}</h3>
+        <div class="courseExpect wrap">
+            <h3>{{::content.expectations.title}}</h3>
             <ul>
-                <li ng-repeat="item in content.program.list">
-                    <img ng-src="{{item.img}}" alt="">
+                <li ng-repeat="item in content.expectations.list">
+                    <img ng-src="images/{{item.img}}" alt="">
                     <p>{{::item.txt}}</p>
                 </li>
             </ul>
         </div>
+
+        <div class="spacer"></div>
+
+        <div class="courseProgram">
+            <h3>{{::content.program.title}}</h3>
+            <div class="programList wrap">
+                <div class="pieCirc" ng-repeat="pie in content.program.list track by $index">
+                    <img ng-src="images/{{::pie.img}}" alt="">
+                    <h4>{{::pie.title}}</h4>
+                    <ul>
+                        <li ng-repeat="ingred in pie.ingredients">
+                            {{::ingred}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="programSmallList">
+                <ul>
+                    <li ng-repeat="pie in content.list2 track by $index">
+                        <img ng-src="images/{{::pie.img}}" alt="">
+                        <h4>{{::pie.title}}</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         <div class="spacerPhoto">
             <img src="images/Marmelada_BG.png" alt="">
         </div>

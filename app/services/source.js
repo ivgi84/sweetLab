@@ -11,10 +11,10 @@ myServices.factory('app.factories.data', ['$http', function ($http) {
             },
             course: {
                 he: 'course/he-il.json',
-                ru: 'course/ru-ru.json'
+                ru: 'course/ru-ru-new-new.txt'
             },
             workshop: {
-                he: 'workhsop/he-il.json',
+                he: 'workshop/he-il.json',
                 ru: 'workshop/ru-ru.json'
             }
         };
