@@ -5,19 +5,23 @@
             <div class="fl">
                 <img src="images/logo.png" alt="">
             </div>
+            <div class="langs fl">
+                <img ng-click="setLang('ru')" src="images/ru-flag.png" alt="">
+                <img ng-click="setLang('he')" src="images/he-flag.png" alt="">
+            </div>
             <div class="fr">
                 <a class="phone">054-787-4663</a>
             </div>
             <div class="clearfix"></div>
         </div>
-        <div class="wrap">
+        <div class="wrap" ng-class="{'isRtl': isRtl}">
             <div class="head">
                 <p>{{::content.header.title}}</p>
                 <p class="sub">{{::content.header.sub}}</p>
             </div>
         </div>
     </header>
-    <main role="main">
+    <main role="main" ng-class="{'isRtl': isRtl}">
         <div class="headForm">
             <div class="wrap">
                 <div ng-include src="'partials/form.html'"></div>

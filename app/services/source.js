@@ -11,7 +11,7 @@ myServices.factory('app.factories.data', ['$http', function ($http) {
             },
             course: {
                 he: 'course/he-il.json',
-                ru: 'course/ru-ru-new-new.txt'
+                ru: 'course/ru-ru.json'
             },
             workshop: {
                 he: 'workshop/he-il.json',
@@ -24,7 +24,6 @@ myServices.factory('app.factories.data', ['$http', function ($http) {
             if(obj.page!='' && obj.lang!=''){
                 return $http.get(dataSrc.folder+''+dataSrc[obj.page][obj.lang])
                     .success(function (res) {
-                        console.log(res);
                         return res;
                     })
                     .error(function () {

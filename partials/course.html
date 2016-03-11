@@ -4,18 +4,22 @@
             <div class="fl">
                 <img src="images/logo.png" alt="">
             </div>
+            <div class="langs fl">
+                <img ng-click="setLang('ru')" src="images/ru-flag.png" alt="">
+                <img ng-click="setLang('he')" src="images/he-flag.png" alt="">
+            </div>
             <div class="fr">
                 <a class="phone">054-787-4663</a>
             </div>
             <div class="clearfix"></div>
         </div>
         <div class="wrap">
-            <div class="head">
-                <p>{{::content.header.title}}</p>
+            <div class="head" ng-class="{'isRtl': isRtl}">
+                <p>{{content.header.title}}</p>
             </div>
         </div>
     </header>
-    <main role="main">
+    <main role="main" ng-class="{'isRtl': isRtl}">
         <div class="headForm">
             <div class="wrap">
                 <div ng-include src="'partials/form.html'"></div>
@@ -23,22 +27,20 @@
         </div>
         <div class="aboutNina wrap">
             <article>
-                {{::content.aboutNina}}
+                {{content.aboutNina}}
             </article>
         </div>
         <div class="aboutCourse">
-            <article class="wrap">
-                {{::content.aboutCourse}}
-            </article>
+            <article class="wrap" ng-bind-html="content.aboutCourse"></article>
             <img src="images/course/Collage.png" alt="">
         </div>
 
-        <div class="courseExpect wrap">
-            <h3>{{::content.expectations.title}}</h3>
+        <div class="courseExpect wrap" ng-class="{'isRtl': isRtl}">
+            <h3>{{content.expectations.title}}</h3>
             <ul>
                 <li ng-repeat="item in content.expectations.list">
                     <img ng-src="images/{{item.img}}" alt="">
-                    <p>{{::item.txt}}</p>
+                    <p>{{item.txt}}</p>
                 </li>
             </ul>
         </div>
@@ -46,14 +48,14 @@
         <div class="spacer"></div>
 
         <div class="courseProgram">
-            <h3>{{::content.program.title}}</h3>
+            <h3>{{content.program.title}}</h3>
             <div class="programList wrap">
                 <div class="pieCirc" ng-repeat="pie in content.program.list track by $index">
-                    <img ng-src="images/{{::pie.img}}" alt="">
-                    <h4>{{::pie.title}}</h4>
+                    <img ng-src="images/{{pie.img}}" alt="">
+                    <h4>{{pie.title}}</h4>
                     <ul>
                         <li ng-repeat="ingred in pie.ingredients">
-                            {{::ingred}}
+                            {{ingred}}
                         </li>
                     </ul>
                 </div>
@@ -61,8 +63,8 @@
             <div class="programSmallList">
                 <ul>
                     <li ng-repeat="pie in content.list2 track by $index">
-                        <img ng-src="images/{{::pie.img}}" alt="">
-                        <h4>{{::pie.title}}</h4>
+                        <img ng-src="images/{{pie.img}}" alt="">
+                        <h4>{{pie.title}}</h4>
                     </li>
                 </ul>
             </div>
@@ -74,15 +76,15 @@
         <div class="wrap">
             <ul class="detailsList">
                 <li ng-repeat="item in content.details">
-                    <img ng-src="{{::item.img}}" alt="">
-                    <h4>{{::item.title}}</h4>
-                    <p ng-bind-html="::item.txt"></p>
+                    <img ng-src="{{item.img}}" alt="">
+                    <h4>{{item.title}}</h4>
+                    <p ng-bind-html="item.txt"></p>
                 </li>
             </ul>
         </div>
         <div class="pattern_down"></div>
         <div class="certificate">
-            <p class="wrap" ng-bind-html="::content.certificate"></p>
+            <p class="wrap" ng-bind-html="content.certificate"></p>
         </div>
         <div class="pattern_up"></div>
         <div class="bottomForm">
@@ -92,9 +94,9 @@
         </div>
     </main>
     <footer>
-        <p ng-bind-html="::content.subscribe"></p>
+        <p ng-bind-html="content.subscribe"></p>
         <span>
-            {{::content.license}}
+            {{content.license}}
         </span>
     </footer>
 </div>
