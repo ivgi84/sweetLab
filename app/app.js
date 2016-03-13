@@ -1,7 +1,6 @@
 var app = angular.module('app', ['ngSanitize', 'ui.router','ngAnimate', 'app.Ctrls', 'app.factories']);
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
-
     //$locationProvider.html5Mode({enabled: true, requireBase: false});
 
     $urlRouterProvider.otherwise("/main/");
