@@ -6,9 +6,12 @@ templateCtrls.controller('mainCtrl', ['$scope','$state','$stateParams','app.fact
 
     var page = {
         page:$state.current.name,
-        lang: $stateParams.lang || 'he',
-    }
-    $scope.isRtl = (page.lang == 'he') ? true : false;
+        lang: $stateParams.lang || 'he'
+    };
+
+
+    $scope.isRtl = (page.lang == 'he');
+    $scope.lang = page.lang;
 
     var getLang = function () {
         $scope.isLoading = true;
@@ -23,6 +26,7 @@ templateCtrls.controller('mainCtrl', ['$scope','$state','$stateParams','app.fact
 
     $scope.setLang = function (lang) {
         $state.go(page.page, {lang:lang});
+        window.scrollTo(0,0);
     }
 
 }]);

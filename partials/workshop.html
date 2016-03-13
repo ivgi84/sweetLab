@@ -2,17 +2,19 @@
 <div class="full-width workshop">
     <header>
         <div class="preHead">
-            <div class="fl">
-                <img src="images/logo.png" alt="">
+            <div class="wrap">
+                <div class="fl">
+                    <a ui-sref="main"><img class="logo" src="images/logo.png" alt=""></a>
+                </div>
+                <div class="langs fl">
+                    <img ng-click="setLang('ru')" src="images/ru-flag.png" alt="">
+                    <img ng-click="setLang('he')" src="images/he-flag.png" alt="">
+                </div>
+                <div class="fr">
+                    <a class="phone">054-787-4663</a>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="langs fl">
-                <img ng-click="setLang('ru')" src="images/ru-flag.png" alt="">
-                <img ng-click="setLang('he')" src="images/he-flag.png" alt="">
-            </div>
-            <div class="fr">
-                <a class="phone">054-787-4663</a>
-            </div>
-            <div class="clearfix"></div>
         </div>
         <div class="wrap" ng-class="{'isRtl': isRtl}">
             <div class="head">
@@ -57,7 +59,7 @@
             <div class="programSmallList">
                 <ul>
                     <li ng-repeat="pie in content.list2 track by $index">
-                        <h4>{{::pie.title}}</h4>
+                        <h4>{{::pie}}</h4>
                     </li>
                 </ul>
             </div>

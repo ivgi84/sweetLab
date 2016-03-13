@@ -1,16 +1,16 @@
 <form action="" name="userForm" ng-controller="signupCtrl" novalidate>
     <h3>{{::content.form.title}}</h3>
     <div class="inputWrap" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
-        <input required ng-maxlength="30" ng-minlength="2" type="text" name="name" ng-model="user.name" placeholder="שם">
+        <input required ng-maxlength="30" ng-minlength="2" type="text" name="name" ng-model="user.name" placeholder="{{::content.form.name}}">
         <p ng-show="userForm.name.$error.minlength" class="errorMsg">קצר מידי</p>
     </div>
     <div class="inputWrap" ng-class="{ 'has-error' : userForm.tel.$invalid && !userForm.tel.$pristine }">
-        <input type="tel" required ng-pattern="/^[0-9]*-?[0-9]*-?[0-9]*$/" name="tel" ng-model="user.tel" placeholder="טלפון" >
+        <input type="tel" required ng-pattern="/^[0-9]*-?[0-9]*-?[0-9]*$/" name="tel" ng-model="user.tel" placeholder="{{::content.form.tel}}" >
         <p ng-show="userForm.tel.$error.pattern" class="errorMsg">רק מספרים</p>
     </div>
     <div class="inputWrap" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-        <input type="email" name="email" ng-model="user.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="דואר אלקטרוני">
+        <input type="email" name="email" ng-model="user.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="{{::content.form.email}}">
         <p ng-show="userForm.email.$error.pattern" class="errorMsg">מייל לא תקין</p>
     </div>
-    <a href="#" ng-click="save(userForm.$valid)" ng-disabled="userForm.$invalid"></a>
+    <button ng-click="save(userForm.$valid)" ng-disabled="userForm.$invalid"></button>
 </form>

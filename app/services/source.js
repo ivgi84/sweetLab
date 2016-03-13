@@ -20,7 +20,6 @@ myServices.factory('app.factories.data', ['$http', function ($http) {
         };
 
         this.getContent = function (obj) {
-            console.log(dataSrc[obj.page]);
             if(obj.page!='' && obj.lang!=''){
                 return $http.get(dataSrc.folder+''+dataSrc[obj.page][obj.lang])
                     .success(function (res) {
@@ -43,9 +42,7 @@ myServices.factory('app.factories.data', ['$http', function ($http) {
                     return 'error';
                 })
         }
-
-
-    }
+    };
 
     return new DataFactory();
 
