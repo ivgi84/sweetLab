@@ -257,7 +257,7 @@ main .courseProgram .programSmallList {
 }
 main .courseProgram .programSmallList ul li {
   display: inline-block;
-  width: 31%;
+  width: 23%;
   margin: 0 1%;
   text-align: center;
   vertical-align: top;
