@@ -31,6 +31,8 @@ body{font-family: 'Open Sans Hebrew', sans-serif, Arial;}
 .fl{  float: left;}
 .fr{  float: right;}
 .clearfix{clear: both}
+.hidden{display: none}
+.sendingLoader{vertical-align: top}
 .pattern_down{  background: url(../images/pattern_down.png) repeat-x top #000;  height: 50px;  width: 100%;  }
 .pattern_up{  background: url(../images/pattern_up.png) repeat-x bottom #000;  height: 50px;  width: 100%;  }
 .spacer{
@@ -77,10 +79,12 @@ header{
       font-size: 34px;
       right: 10%;
       font-weight: bold;
-      padding-top: 250px;
+      padding-top: 230px;
       width: 500px;
       padding-right: 150px;
       float: right;
+      text-align: center;
+      line-height: 120%;
     }
     .sub{
     padding-top: 10px;
@@ -90,7 +94,7 @@ header{
 
 .head.isRtl{
   p{
-    padding-right: 250px;
+    padding-right: 160px;
   }
 }
 .course{
@@ -128,6 +132,7 @@ main{
       line-height: 150%;
       letter-spacing: 0.6px;
       font-size: 22px;
+      text-align: justify;
     }
   }
   .aboutCourse{
@@ -272,6 +277,9 @@ main{
     li{display: inline-block; width: 31%; margin: 0 1%; vertical-align: top; text-align: center; padding: 25px 0}
     h4{font-weight: 600; font-size: 30px;padding: 20px 0px;}
     p{font-size: 18px;line-height: 130%; letter-spacing: -.5px;
+      span{
+        text-decoration: line-through;
+      }
       strong{  font-weight: 600;  }
     }
   }
@@ -315,10 +323,10 @@ footer{
   }
   span{
     color:#fff;
-    font-size:18px;
+    font-size:16px;
     display: block;
     text-align: center;
-    padding: 40px 0;
+    padding: 40px 20px;
   }
 }
 form{
@@ -378,9 +386,18 @@ form{
     -webkit-transition: 0.5s all ease;
     -moz-transition: 0.5s all ease;
     vertical-align: top;
+    color:#000;
+    font-size:24px;
+    font-weight: 600;
     &:hover{
-      background: url(../images/Hover-send.png) no-repeat;
+      background: url(../images/hover-send.png) no-repeat;
+      color:#fff;
     }
+  }
+  .sendResult{
+    color:#fff;
+    font-size: 22px;
+    padding: 20px;
   }
 }
 .bottomForm{
@@ -394,11 +411,14 @@ form{
       border: 1px solid #231f20;
       color:#231f20;
     }
+    .errorMsg, .sendResult{
+      color:#000;
+    }
   }
 }
 .choice{
   header{
-  background: url(../images/main/header.png) no-repeat center #000;
+  background: url(../images/main/header.jpg) no-repeat center #080c0b;
     background-size: contain;
     height: 616px;
     h1{
@@ -574,5 +594,13 @@ form{
   footer p{
     font-size: 20px;
     line-height: 120%;
+  }
+}
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+  .head.isRtl p{
+    padding-right: 90px;
   }
 }

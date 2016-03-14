@@ -43,6 +43,12 @@ body {
 .clearfix {
   clear: both;
 }
+.hidden {
+  display: none;
+}
+.sendingLoader {
+  vertical-align: top;
+}
 .pattern_down {
   background: url(../images/pattern_down.png) repeat-x top #000;
   height: 50px;
@@ -99,16 +105,18 @@ header .head p {
   font-size: 34px;
   right: 10%;
   font-weight: bold;
-  padding-top: 250px;
+  padding-top: 230px;
   width: 500px;
   padding-right: 150px;
   float: right;
+  text-align: center;
+  line-height: 120%;
 }
 header .head .sub {
   padding-top: 10px;
 }
 .head.isRtl p {
-  padding-right: 250px;
+  padding-right: 160px;
 }
 .course header {
   background: url(../images/course/header.jpg) no-repeat center 64px #000;
@@ -136,6 +144,7 @@ main .aboutNina article {
   line-height: 150%;
   letter-spacing: 0.6px;
   font-size: 22px;
+  text-align: justify;
 }
 main .aboutCourse {
   background: #000;
@@ -303,6 +312,9 @@ main .detailsList p {
   line-height: 130%;
   letter-spacing: -0.5px;
 }
+main .detailsList p span {
+  text-decoration: line-through;
+}
 main .detailsList p strong {
   font-weight: 600;
 }
@@ -349,10 +361,10 @@ footer p strong {
 }
 footer span {
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   display: block;
   text-align: center;
-  padding: 40px 0;
+  padding: 40px 20px;
 }
 form {
   margin: 0 auto;
@@ -414,9 +426,18 @@ form button {
   -webkit-transition: 0.5s all ease;
   -moz-transition: 0.5s all ease;
   vertical-align: top;
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
 }
 form button:hover {
-  background: url(../images/Hover-send.png) no-repeat;
+  background: url(../images/hover-send.png) no-repeat;
+  color: #fff;
+}
+form .sendResult {
+  color: #fff;
+  font-size: 22px;
+  padding: 20px;
 }
 .bottomForm form {
   padding-bottom: 50px;
@@ -429,8 +450,12 @@ form button:hover {
   border: 1px solid #231f20;
   color: #231f20;
 }
+.bottomForm form .errorMsg,
+.bottomForm form .sendResult {
+  color: #000;
+}
 .choice header {
-  background: url(../images/main/header.png) no-repeat center #000;
+  background: url(../images/main/header.jpg) no-repeat center #080c0b;
   background-size: contain;
   height: 616px;
 }
@@ -597,5 +622,10 @@ form button:hover {
   footer p {
     font-size: 20px;
     line-height: 120%;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .head.isRtl p {
+    padding-right: 90px;
   }
 }

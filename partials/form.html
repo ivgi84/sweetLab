@@ -12,6 +12,16 @@
         <input type="email" name="email" ng-model="user.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="{{::content.form.email}}">
         <p ng-show="userForm.email.$error.pattern" class="errorMsg">{{::content.form.errorEmail}}</p>
     </div>
-    <button type="button" ng-click="save(userForm.$valid)" ng-disabled="userForm.$invalid"></button>
+    <button type="button" ng-click="save(userForm.$valid)" ng-disabled="userForm.$invalid" ng-class="{hidden:sending}">
+        {{::content.form.sendBtn}}
+    </button>
+    <img width="" class="sendingLoader" ng-class="{hidden:!sending}" src="images/wave.svg" alt="">
+
+    <p class="sendResult" ng-if="sendSuccess">
+        {{::content.form.sendSuccess}}
+    </p>
+    <p class="sendResult" ng-if="sendFail">
+        {{::content.form.sendFail}}
+    </p>
 </form>
 

@@ -38,7 +38,7 @@
             <article class="wrap">
                 {{::content.aboutCourse}}
             </article>
-            <img src="images/workshop/Collage.png" alt="">
+            <img src="images/workshop/collage.jpg" alt="">
         </div>
 
         <div class="spacer"></div>
@@ -89,7 +89,7 @@
         </div>
     </main>
     <footer>
-        <p ng-bind-html="::content.subscribe"></p>
+        <p ng-class="{isRtl:isRtl}" ng-bind-html="::content.subscribe"></p>
         <span>
             {{::content.license}}
         </span>

@@ -35,7 +35,6 @@ myServices.factory('app.factories.data', ['$http', function ($http) {
         this.addUser = function (user) {
             return $http.post('bin/User.php?action=addUser', user)
                 .success(function (res) {
-                    console.log(res);
                     return res;
                 })
                 .error(function () {
